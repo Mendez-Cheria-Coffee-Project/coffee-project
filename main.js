@@ -23,7 +23,7 @@ function updateCoffees(e) {
     let filteredCoffees = [];
     let searchTerm = searchInput.value.toLowerCase();
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(searchTerm)) {
+        if (coffee.roast === selectedRoast || selectedRoast === "all" && coffee.name.toLowerCase().includes(searchTerm)) {
             filteredCoffees.push(coffee);
         }
     });
@@ -53,8 +53,10 @@ let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let searchInput = document.querySelector('#search-input');
 
+
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 searchInput.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
+
