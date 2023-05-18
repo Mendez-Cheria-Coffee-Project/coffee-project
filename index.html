@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Coffee!</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Coffee!</h1>
 
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option value="all">All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <input type="text" id="search-input" placeholder="Coffee Name">
-        <input id="submit" type="submit" />
-    </form>
-    <div id="coffees"></div>
-<!--removes table headers and replaced it with div-->
-<form id="new-coffee-form">
-    <select id="new-roast-selection">
-        <option value="light">light</option>
-        <option value="medium">medium</option>
-        <option value="dark">dark</option>
-    </select>
-    <input type="text" id="new-coffee-name"  placeholder="Coffee Name">
-    <input type="submit" value="Add Coffee">
-</form>
+        <form>
+            <label for="roast-selection"></label>
+            <select id="roast-selection">
+                <option value="all">All</option>
+                <option>light</option>
+                <option>medium</option>
+                <option>dark</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Coffee Name">
+            <input id="submit" type="submit"/>
+        </form>
 
 
-    <script src="main.js"></script>
-</body>
+        <!--removes table headers and replaced it with div-->
+        <form id="new-coffee-form">
+            <select id="new-roast-selection">
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+            <input type="text" id="new-coffee-name" placeholder="Coffee Name">
+            <input type="submit" value="Add Coffee">
+        </form>
+
+        <div id="coffees"></div>
+
+        <script src="main.js"></script>
+    </body>
 </html>
