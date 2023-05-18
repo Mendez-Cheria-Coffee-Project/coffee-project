@@ -52,6 +52,10 @@ let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let searchInput = document.querySelector('#search-input');
+let newCoffeeSelection = document.querySelector('#new-coffee-selection');
+let newCoffeeForm= document.querySelector('#new-coffee-form');
+let newCoffeeName= document.querySelector('#new-coffee-name');
+
 
 
 tbody.innerHTML = renderCoffees(coffees);
