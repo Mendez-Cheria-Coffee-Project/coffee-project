@@ -19,7 +19,7 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;
+    let selectedRoast = roastSelection.value.toLowerCase();
     let filteredCoffees = [];
     let searchTerm = searchInput.value.toLowerCase();
     coffees.forEach(function(coffee) {
@@ -35,7 +35,7 @@ function addCoffee(e) {
     let newCoffee = {
         id: coffees.length + 1,
         name: newCoffeeName.value,
-        roast: newRoastSelection.value
+        roast: newRoastSelection.value.toLowerCase()
     }
     coffees.push(newCoffee);
     tbody.innerHTML = renderCoffees(coffees);
