@@ -40,13 +40,17 @@
             </form>
 
             <form id="new-coffee-form">
-                <select id="new-roast-selection">
+                <label for="new-roast-selection" class="mb-2 font-weight-bold">Roast Type</label>
+                <select id="new-roast-selection"class="form-control mb-3 input">
                     <option>Light</option>
                     <option>Medium</option>
                     <option>Dark</option>
                 </select>
-                <input type="text" id="new-coffee-name" placeholder="Search Coffee Names">
-                <input type="submit" value="Add Coffee">
+                <div>
+                    <label for="new-coffee-name" class="mb-2 font-weight-bold">Coffee Name</label>
+                    <input class="form-control mb-3 input" type="text" id="new-coffee-name" placeholder="Coffee Name">
+                    <input value="Add Coffee" class="btn btn-primary w-100 mb-5 button" type="submit"/>
+                </div>
             </form>
         </div>
         <div id="coffees"></div>
