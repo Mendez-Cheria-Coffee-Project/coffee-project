@@ -1,3 +1,4 @@
+(function(){
 "use strict"
 
 // Function to render single coffee object into HTML
@@ -87,4 +88,4 @@ submitButton.addEventListener('click', updateCoffees);
 searchInput.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 newCoffeeForm.addEventListener('submit', addCoffee);
-
+})();
