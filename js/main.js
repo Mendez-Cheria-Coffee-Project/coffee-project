@@ -1,22 +1,31 @@
 "use strict"
 
+// Function to render single coffee object into HTML
 function renderCoffee(coffee) {
-    let html = '<div class="coffee">';
-    html += '<h2>' + coffee.name + '</h2>';
-    html += '<p>' + coffee.roast + '</p>';
-    html += '</div>';
-
-    return html;
+    return `
+        <div class="col-sm-4 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="../img/coffee.png" alt="${coffee.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${coffee.name}</h5>
+                    <p class="card-text">${coffee.roast}</p>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
+// Function to render a list of coffee objects into HTML
 function renderCoffees(coffees) {
-    let html = '';
+    let html = '<div class="row">';
     for(let i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
+    html += '</div>';
     return html;
 }
 
+// Function to update coffee list based on the selected roast and search term
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value.toLowerCase();
@@ -30,6 +39,7 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Function to add a new coffee to the list
 function addCoffee(e) {
     e.preventDefault();
     let newCoffee = {
@@ -41,6 +51,7 @@ function addCoffee(e) {
     tbody.innerHTML = renderCoffees(coffees);
 }
 
+// Array of coffee objects
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Jack Frost', roast: 'light'},
@@ -59,6 +70,7 @@ let coffees = [
     {id: 14, name: 'Cool Story Brew', roast: 'dark'},
 ];
 
+// Query DOM elements
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
@@ -67,10 +79,10 @@ let newRoastSelection = document.querySelector('#new-roast-selection');
 let newCoffeeForm= document.querySelector('#new-coffee-form');
 let newCoffeeName= document.querySelector('#new-coffee-name');
 
-
-
+// Initial rendering of coffee list
 tbody.innerHTML = renderCoffees(coffees);
 
+// Add event listeners to form controls
 submitButton.addEventListener('click', updateCoffees);
 searchInput.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);

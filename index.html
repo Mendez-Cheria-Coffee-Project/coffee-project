@@ -16,47 +16,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    <h1 class="display-2 text-center">Frosty Brews</h1>
-    <h3 class="text-center mb-5">Stay frosty, one sip at a time</h3>
+<!-- Video wrapper with overlay and container for page content -->
+<div class="video-wrapper">
+    <video autoplay loop muted class="bg-video">
+        <source src="img/snow.mp4" type="video/mp4">
+    </video>
+    <!-- Overlay for video to darken it and make text more readable -->
+    <div class="overlay"></div>
 
-    <div class="row border border-danger">
-        <div class="col">
+    <!-- Main content container -->
+    <div class="container py-2">
+        <h1 class="display-2 text-center">Frosty Brews</h1>
+        <h3 class="text-center mb-5">Stay frosty, one sip at a time</h3>
 
-            <!-- Form for searching coffees -->
-            <form>
-                <label for="roast-selection" class="mb-2 font-weight-bold">Roast Type</label>
-                <select id="roast-selection" class="form-control mb-3 input">
-                    <option>All</option>
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-                <div class="form-group">
-                    <label for="search-input" class="mb-2 font-weight-bold">Coffee Name</label>
-                    <input class="form-control mb-3 input" type="text" id="search-input" placeholder="Coffee Name">
-                    <input id="submit" class="btn btn-primary w-100 mb-5 button" type="submit"/>
-                </div>
-            </form>
+        <!-- Row for forms -->
+        <div class="row pt-2">
+            <!-- Column for coffee search form -->
+            <div class="col-6">
+                <!-- Form for searching coffees -->
+                <form>
+                    <div class="text-center font-weight-bold mb-3 header">SEARCH COFFEES</div>
+                    <label for="roast-selection" class="mb-2 font-weight-bold w-100">Roast Type</label>
+                    <select class="form-control mb-3 input" id="roast-selection">
+                        <option>All</option>
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                    <div class="form-group">
+                        <label for="search-input" class="font-weight-bold">Coffee Name</label>
+                        <input class="form-control mb-3 input" id="search-input" type="text"
+                               placeholder="Search coffees"/>
+                        <input id="submit" class="btn btn-primary w-100 mb-4 button" type="submit"/>
+                    </div>
+                </form>
 
-            <form id="new-coffee-form">
-                <label for="new-roast-selection" class="mb-2 font-weight-bold">Roast Type</label>
-                <select id="new-roast-selection"class="form-control mb-3 input">
-                    <option>Light</option>
-                    <option>Medium</option>
-                    <option>Dark</option>
-                </select>
-                <div>
-                    <label for="new-coffee-name" class="mb-2 font-weight-bold">Coffee Name</label>
-                    <input class="form-control mb-3 input" type="text" id="new-coffee-name" placeholder="Coffee Name">
-                    <input value="Add Coffee" class="btn btn-primary w-100 mb-5 button" type="submit"/>
-                </div>
-            </form>
+                <!-- Form for adding new coffee -->
+                <form id="new-coffee-form">
+                    <div class="text-center font-weight-bold mb-3 header">ADD A COFFEE</div>
+                    <label for="new-roast-selection" class="mb-2 font-weight-bold">Roast Type</label>
+                    <select id="new-roast-selection" class="form-control mb-3 input">
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                    <div class="form-group">
+                        <label for="new-coffee-name" class="font-weight-bold">Coffee Name</label>
+                        <input class="form-control mb-3 input" id="new-coffee-name" type="text"
+                               placeholder="Coffee Name" required/>
+                        <input type="submit" class="btn btn-primary w-100 button" value="Add Coffee"/>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Column for displaying coffee search results -->
+            <div class="col-6">
+                <div id="coffees"></div>
+            </div>
         </div>
-        <div id="coffees"></div>
     </div>
 </div>
-
 <script src="js/main.js"></script>
 </body>
 </html>

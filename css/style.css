@@ -1,9 +1,101 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+/* Set global styles and root variables */
+* {
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+:root {
+    --primary-text-color: #F1F1E6;
+    --buttons: #2376a4;
+    --button-hover-color: #a2c3d8;
+    --card-hover-color: #f5f5f5;
 }
+
+/* Input and button styles */
+.input {
+    background-color: var(--primary-text-color);
+}
+
+.button {
+    background-color: var(--buttons);
+    border: none;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Font color for bold text, headers */
+.font-weight-bold, h1, h3 {
+    color: var(--primary-text-color);
+}
+
+/* Header styles for forms */
+.header {
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+
+/* Video wrapper positioning */
+.video-wrapper {
+    position: relative;
+}
+
+/* Full screen background video settings */
+.bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* Dark overlay for video */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Positioning for main container over video */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specific font for site title */
+h1 {
+    font-family: 'Yeseva One', cursive;
+}
+
+/* Limit the image height on the card and ensure it covers the area */
+.card-img-top {
+    width: 100%;
+    max-height: 140px;
+    object-fit: cover;
+}
+
+/* Padding inside the card */
+.card-body {
+    padding: 15px;
+}
+
+/* Add a transition to card and center it, change background color on hover */
+.card {
+    transition: transform .2s;
+    margin: 0 auto;
+    background-color: var(--primary-text-color);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    background-color: var(--card-hover-color);
+}
+
