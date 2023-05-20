@@ -4,7 +4,7 @@
 // Function to render single coffee object into HTML
 function renderCoffee(coffee) {
     return `
-        <div class="col-sm-4 mb-4">
+        <div class="col-xs-12 col-sm-12 col-xl-4 col-lg-6 col-md-6 mb-4">
             <div class="card h-100">
                 <img class="card-img-top" src="../img/coffee.png" alt="${coffee.name}">
                 <div class="card-body">
