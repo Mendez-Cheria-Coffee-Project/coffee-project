@@ -98,3 +98,9 @@ h1 {
     background-color: var(--card-hover-color);
 }
 
+@media screen and (max-width: 768px) {
+    .display-2 {
+        font-size: 4.4em;
+    }
+}
+
