@@ -41,7 +41,6 @@
  /*Video wrapper positioning*/
 .video-wrapper {
     position: relative;
-    height: 1750px;
 }
 
 .bg-video {
@@ -97,6 +96,10 @@ h1 {
 .card:hover {
     transform: scale(1.02);
     background-color: var(--card-hover-color);
+}
+
+.space {
+    height: 8em;
 }
 
 @media screen and (max-width: 768px) {
