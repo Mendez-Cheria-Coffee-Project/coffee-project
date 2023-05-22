@@ -38,9 +38,10 @@
     text-decoration: underline;
 }
 
-/* Video wrapper positioning */
+ /*Video wrapper positioning*/
 .video-wrapper {
     position: relative;
+    height: 1750px;
 }
 
 .bg-video {
@@ -63,7 +64,7 @@
     z-index: 1;
 }
 
-/* Positioning for main container over video */
+ /*Positioning for main container over video */
 .container {
     position: relative;
     z-index: 2;
